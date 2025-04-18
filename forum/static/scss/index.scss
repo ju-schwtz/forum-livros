@@ -1,0 +1,52 @@
+@use './components/' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Signika+Negative:wght@300..700&display=swap');
+
+:root {
+  --cor-1: #E2E6E9;
+  --cor-2: #DBCBBC;
+  --cor-3: #F9F5F0;
+  --cor-4: #FCFBFF;
+  --cor-5: #9798B7;
+  --cor-6: #FFB786;
+  --cor-7: #98C67E;
+  --cor-7-1: #74b350;
+  --cor-8: #201F31;
+  --cor-9: #D2D2D2;
+  --cor-0: #606062;
+
+  --font-1: 'Fjalla One';
+  --font-2: 'Signika Negative';
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  // outline: 1px solid red;
+}
+
+body {
+  background: linear-gradient(var(--cor-1), var(--cor-2));
+
+  font-family: var(--font-2);
+  color: var(--cor-0);
+}
+
+a {
+  text-decoration: none;
+  color: var(--cor-0);
+
+  &:hover {
+    color: var(--cor-8);
+  }
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}

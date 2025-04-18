@@ -3,85 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <title>Fórum de Livros</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #f0f4f8;
-      color: #333;
-    }
-
-    header {
-      background-color: #4a90e2;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 2.2em;
-    }
-
-    .welcome {
-      text-align: center;
-      margin-top: 40px;
-    }
-
-    .welcome h2 {
-      font-size: 1.8em;
-      margin-bottom: 10px;
-    }
-
-    .welcome p {
-      font-size: 1.1em;
-      color: #555;
-    }
-
-    .actions {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 40px;
-    }
-
-    .actions a {
-      padding: 12px 24px;
-      background-color: #4a90e2;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: background-color 0.3s ease;
-    }
-
-    .actions a:hover {
-      background-color: #357ab8;
-    }
-
-    footer {
-      margin-top: 60px;
-      text-align: center;
-      font-size: 0.9em;
-      color: #888;
-      padding: 20px;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <link rel="stylesheet" href="../static/scss/index.css">
 </head>
 <body>
-  <header>
-    <h1>📚 Fórum de Livros</h1>
-  </header>
+  <section class="forum_container">
+    <header class="header_container">
+      <section class="display_container--header">
+        <h1 class="logo">Fórum de Livros</h1>
 
-  <div class="welcome">
-    <h2>Bem-vindo(a), {{ usuario }}!</h2>
-    <p>Explore, compartilhe e discuta seus livros favoritos com outros leitores.</p>
-  </div>
+        <nav class="nav_menu">
+          <ul>
+            <li>LIVROS</li>
+            <li>GENEROS</li>
+            <li>POPULARES</li>
+          </ul>
+        </nav>
 
-  <div class="actions">
-    <a href="/perfil">👤 Gerenciar Perfil</a>
-    <a href="/logout">🚪 Sair</a>
-  </div>
+        <nav class="nav_user">
+          <ul>
+            <li><a href="/perfil">👤 Gerenciar Perfil</a></li>
+            <li><a href="/logout">🚪 Sair</a></li>
+          </ul>
+        </nav>
+      </section>
+    </header>
+
+    <main class="main_container">
+      <section class="display_container--main">
+        <section class="main_display">
+          <article>
+            <h3>Procure o livro que você está ansioso para ler.</h3>
+            <p>O melhor site para busca de uma nova leitura!</p>
+
+            <form action="">
+              <div class="input_search">
+                <input type="text" name="search_book" id="search_book" placeholder="Procurar seu livro favorito aqui...">
+                <button type="submit">Procurar</button>
+              </div>
+            </form>
+          </article>
+
+          <figure>
+            <img src="../static/images/livros.png" alt="livros">
+          </figure>
+        </section>
+      </section>
+    </main>
+  </section>
+
+  <section class="forum_container--content">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At est nulla accusamus assumenda nisi quis voluptates sunt architecto perferendis, id consequuntur tempore, unde eaque cum ipsum! Saepe repudiandae dolores laborum.</p>
+  </section>
 
   <footer>
     &copy; 2025 Fórum de Livros | Feito com ❤️ em Flask

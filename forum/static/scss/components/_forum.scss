@@ -1,0 +1,142 @@
+.forum_container {
+  width: 1400px;
+  height: 100%;
+  background: linear-gradient(var(--cor-4), var(--cor-3));
+  margin: 4rem auto 0;
+  border-radius: 1rem 1rem 0 0;
+  border: 10px solid #fff;
+  border-bottom: none;
+  padding: 1rem 3rem;
+}
+
+.forum_container--content {
+  width: 1400px;
+  height: 100%;
+  background: var(--cor-4);
+  margin: 0 auto 4rem;
+  border-radius: 0 0 1rem 1rem;
+  border: 10px solid #fff;
+  border-top: none;
+  padding: 1rem 0 1rem 3rem;
+}
+
+.header_container {
+  width: 100%;
+  height: 80px;
+  padding: 1rem;
+  margin-bottom: 5rem;
+
+  .display_container--header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    nav {
+
+      ul {
+        display: flex;
+      }
+
+      &.nav_menu ul {
+        gap: 2.5rem;
+      }
+
+      &.nav_user ul {
+        gap: 1rem;
+      }
+    }
+
+    .logo {
+      font-family: var(--font-1);
+      font-size: 2.6rem;
+      color: var(--cor-8);
+    }
+  }
+}
+
+.main_container {
+  .display_container--main {
+    .main_display {
+      height: 650px;
+
+      margin-bottom: 5rem;
+
+      display: flex;
+
+      article {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-flow: column nowrap;
+        padding: 1rem;
+        justify-content: center;
+
+        h3 {
+          font-size: 4rem;
+          line-height: 3.6rem;
+          margin-bottom: 2rem;
+          color: var(--cor-8);
+        }
+
+        p {
+          color: var(--cor-0);
+          margin-bottom: 3rem;
+        }
+
+        form {
+          .input_search {
+            background-color: #fff;
+            padding: .8rem 1rem;
+            border-radius: 3rem;
+            width: 70%;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            justify-content: center;
+
+            input {
+              height: 50px;
+              width: 70%;
+              border: none;
+              padding-left: 1.5rem;
+              background-color: none;
+              color: var(--cor-0);
+              outline: none;
+
+              &::placeholder {
+                color: var(--cor-5);
+              }
+            }
+
+            button {
+              width: 30%;
+              outline: none;
+              background-color: var(--cor-7);
+              color: #fff;
+              border: none;
+              padding: 1rem 1.70rem;
+              border-radius: 1.5rem;
+              cursor: pointer;
+
+              &:hover {
+                background-color: var(--cor-7-1);
+              }
+            }
+          }
+        }
+      }
+
+      figure {
+        width: 43%;
+        position: relative;
+
+        img {
+          position: absolute;
+          bottom: -12%;
+          left: 10%;
+          transform: translateX(30%);
+          transform: scaleX(-1);
+        }
+      }
+    }
+  }
+}

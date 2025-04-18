@@ -69,7 +69,7 @@
     {% with messages = get_flashed_messages(with_categories=true) %}
       {% if messages %}
         {% for category, message in messages %}
-          <div class="message" style="color: {% if category == 'error' %}red{% else %}green{% endif %};">
+          <div class="message {{ 'error' if category == 'error' else 'success' }}">
             {{ message }}
           </div>
         {% endfor %}
