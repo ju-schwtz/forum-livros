@@ -3,29 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <title>Login</title>
-  <link rel="stylesheet" href="../static/css/main.css">
+  <link rel="stylesheet" href="../static/scss/index.css">
 </head>
-<body>
-  <div class="container">
-    <h2>Login</h2>
+<body class="body_login">
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class="message {{ 'error' if category == 'error' else 'success' }}" id="message">
+          <img src="../static/images/notificacao_2.png" alt="icone de notificacao">
+          <span>{{ message }}</span>
+        </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
 
-    {% with messages = get_flashed_messages(with_categories=true) %}
-      {% if messages %}
-        {% for category, message in messages %}
-          <div class="message {{ 'error' if category == 'error' else 'success' }}">
-            {{ message }}
-          </div>
-        {% endfor %}
-      {% endif %}
-    {% endwith %}
+  <div class="login_container">
+    <figure class="login_container--img">
+      <img src="../static/images/gatineo.png" alt="Gato sobre livros">
+    </figure>
 
-    <form method="POST" action="/login">
-      <input type="text" name="username" placeholder="Usuário" required>
-      <input type="password" name="password" placeholder="Senha" required>
-      <button type="submit">Entrar</button>
-    </form>
+    <section class="login_container--form">
+      <h2>Login</h2>
 
-    <p>Não tem conta? <a href="/register">Cadastre-se</a></p>
+      <form method="POST" action="/login">
+        <input type="text" name="username" placeholder="Usuário" required>
+        <input type="password" name="password" placeholder="Senha" required>
+        <button type="submit">Entrar</button>
+      </form>
+
+      <p>Não tem conta? <a href="/register">Cadastre-se</a></p>
+    </section>
   </div>
+
+  <script>
+    setTimeout(function() {
+      let flashMessage = document.getElementById('message');
+      if (flashMessage) {
+        flashMessage.style.transition = 'opacity 0.5s ease';
+        flashMessage.style.opacity = '0';
+
+        setTimeout(function() {
+          flashMessage.remove();
+        }, 500);
+      }
+    }, 3500);
+  </script>
 </body>
 </html>
