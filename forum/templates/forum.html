@@ -15,15 +15,19 @@
         <nav class="nav_menu">
           <ul>
             <li>LIVROS</li>
-            <li>GENEROS</li>
-            <li>POPULARES</li>
+            <li>POPULAR</li>
           </ul>
         </nav>
 
         <nav class="nav_user">
           <ul>
-            <li><a href="/perfil">👤 Gerenciar Perfil</a></li>
-            <li><a href="/logout">🚪 Sair</a></li>
+            {% if usuario %}
+              <li><span>Bem-vindo, {{ usuario.nome }}!</span><a href="/logout">🚪 Sair</a></li>
+            {% else %}
+              <li>Você não está logado. <a href="{{ url_for('login') }}">Faça login</a></li>
+              <p></p>
+            {% endif %}
+            
           </ul>
         </nav>
       </section>
@@ -53,7 +57,19 @@
   </section>
 
   <section class="forum_container--content">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At est nulla accusamus assumenda nisi quis voluptates sunt architecto perferendis, id consequuntur tempore, unde eaque cum ipsum! Saepe repudiandae dolores laborum.</p>
+    {% if livro %}
+        <h2>Livro com maior avaliação:</h2>
+        <p>Título: {{ livro.titulo }}</p>
+        <p>Autor: {{ livro.autor }}</p>
+        <p>Categoria: {{ livro.categoria }}</p>
+        {% if livro.imagem_base64 %}
+          <img src="data:image/png;base64,{{ livro.imagem_base64 }}" alt="Capa do livro" width="300px" />
+        {% else %}
+          <p>Sem imagem</p>
+        {% endif %}
+    {% else %}
+        <p>Não há livros avaliados no momento.</p>
+    {% endif %}
   </section>
 
   <footer>
