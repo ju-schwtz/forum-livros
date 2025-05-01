@@ -9,15 +9,36 @@
   padding: 1rem 3rem;
 }
 
-.forum_container--content {
+.footer_container {
   width: 1400px;
-  height: 100%;
-  background: var(--cor-4);
-  margin: 0 auto 4rem;
+  height: 200px;
+  justify-content: center;
   border-radius: 0 0 1rem 1rem;
+  margin: 0 auto 4rem;
   border: 10px solid #fff;
   border-top: none;
-  padding: 1rem 0 1rem 3rem;
+  background: linear-gradient(var(--cor-3), var(--cor-4));
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+
+  h3 {
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.forum_container--content {
+  width: 1400px;
+  background: var(--cor-4);
+  margin: 0 auto;
+  border: 10px solid #fff;
+  border-top: none;
+  border-bottom: none;
+  padding: 6rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .header_container {
@@ -81,48 +102,6 @@
           color: var(--cor-0);
           margin-bottom: 3rem;
         }
-
-        form {
-          .input_search {
-            background-color: #fff;
-            padding: .8rem 1rem;
-            border-radius: 3rem;
-            width: 70%;
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-            justify-content: center;
-
-            input {
-              height: 50px;
-              width: 70%;
-              border: none;
-              padding-left: 1.5rem;
-              background-color: none;
-              color: var(--cor-0);
-              outline: none;
-
-              &::placeholder {
-                color: var(--cor-5);
-              }
-            }
-
-            button {
-              width: 30%;
-              outline: none;
-              background-color: var(--cor-7);
-              color: #fff;
-              border: none;
-              padding: 1rem 1.70rem;
-              border-radius: 1.5rem;
-              cursor: pointer;
-
-              &:hover {
-                background-color: var(--cor-7-1);
-              }
-            }
-          }
-        }
       }
 
       figure {
@@ -138,5 +117,48 @@
         }
       }
     }
+  }
+}
+
+.livros_populares {
+  width: 300px;
+  height: 500px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: .5rem;
+  transition: box-shadow .3s ease-in-out;
+  cursor: pointer;
+
+  h4 {
+    margin-bottom: .75rem;
+    font-size: 1.3rem;
+  }
+
+  h6 {
+    margin-bottom: 1.25rem;
+    font-size: 1rem;
+  }
+
+  p {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &:hover {
+    box-shadow: 7px 7px 20px var(--cor-2);
+  }
+}
+
+.texto_bonito {
+  color: var(--cor-6-2);
+  transition: .2s ease;
+  font-weight: bold;
+
+  &:hover {
+    color: var(--cor-8);
   }
 }
