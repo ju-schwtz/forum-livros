@@ -1,0 +1,115 @@
+.livros_container {
+  width: 1400px;
+  height: 100%;
+  background: linear-gradient(var(--cor-4), var(--cor-3));
+  margin: 4rem auto;
+  border-radius: 1rem;
+  border: 10px solid #fff;
+  padding: 1rem 3rem;
+
+  .form_pesquisa {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    gap: 2rem;
+    padding: 1rem;
+    border-radius: .8rem;
+    background-color: var(--cor-9);
+
+    .input_titulo, .input_categoria {
+      flex-grow: 2;
+    }
+
+    .input_pesquisar {
+      flex-grow: 1;
+    }
+
+    input {
+      border: none;
+      padding: 1rem;
+      background-color: none;
+      border-radius: .5rem;
+      color: var(--cor-0);
+      outline: none;
+
+      &::placeholder {
+        color: var(--cor-5);
+      }
+    }
+
+    select {
+      background-color: none;
+      color: var(--cor-5);
+      padding: 1rem;
+      border-radius: .5rem;
+      outline: none;
+      border: none;
+
+      &::placeholder {
+        color: var(--cor-5);
+      }
+    }
+
+    button {
+      flex-grow: 1;
+      outline: none;
+      background-color: var(--cor-4);
+      color: var(--cor-9);
+      border: none;
+      border-radius: .5rem;
+      padding: .5rem;
+      cursor: pointer;
+      font-size: .75rem;
+      transition: background-color .2s ease-in;
+      
+      &:hover {
+        background-color: var(--cor-0);
+      }
+    }
+  }
+
+  &--card {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    gap: 2rem;
+    padding: 1rem;
+
+    .card_livro {
+      width: 350px;
+      background-color: #fff;
+      border-radius: .3rem;
+      padding: 1rem;
+
+      a {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        background-color: #fff;
+        transition: box-shadow .3s ease-out;
+
+        img {
+          margin-bottom: 1rem;
+        }
+
+        h2 {
+          font-size: 1.2rem;
+          margin: .5rem;
+        }
+    
+        p {
+          display: flex;
+          align-items: center;
+        }
+
+        &:hover {
+          box-shadow: 7px 7px 20px var(--cor-2);
+        }
+      }
+    }
+  }
+}
+
+.form_pesquisa {
+  margin-bottom: 3rem;
+}

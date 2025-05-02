@@ -62,32 +62,6 @@
   justify-content: space-around;
 }
 
-.header_container {
-  width: 100%;
-  height: 80px;
-  padding: 1rem;
-  margin-bottom: 5rem;
-}
-.header_container .display_container--header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.header_container .display_container--header nav ul {
-  display: flex;
-}
-.header_container .display_container--header nav.nav_menu ul {
-  gap: 2.5rem;
-}
-.header_container .display_container--header nav.nav_user ul {
-  gap: 1rem;
-}
-.header_container .display_container--header .logo {
-  font-family: var(--font-1);
-  font-size: 2.6rem;
-  color: var(--cor-8);
-}
-
 .main_container .display_container--main .main_display {
   height: 650px;
   margin-bottom: 5rem;
@@ -100,6 +74,7 @@
   flex-flow: column nowrap;
   padding: 1rem;
   justify-content: center;
+  align-items: center;
 }
 .main_container .display_container--main .main_display article h3 {
   font-size: 4rem;
@@ -268,8 +243,12 @@
 .livro_container--header {
   width: 100%;
   display: flex;
+  flex-flow: row-reverse nowrap;
   gap: 1rem;
   margin-bottom: 4rem;
+}
+.livro_container--header figure {
+  border-radius: 0.5rem;
 }
 .livro_container--header figure img {
   border-radius: 0.5rem;
@@ -298,6 +277,239 @@
 .livro_container--Comentarios h2 {
   margin-bottom: 3rem;
 }
+.livro_container--Comentarios .form_postagem {
+  margin-bottom: 3rem;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 0.8rem;
+  background-color: var(--cor-9);
+}
+.livro_container--Comentarios .form_postagem .form_header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.livro_container--Comentarios .form_postagem .form_header .form_group {
+  width: 50%;
+}
+.livro_container--Comentarios .form_postagem .form_header .form_group #titulo {
+  flex-grow: 1;
+}
+.livro_container--Comentarios .form_postagem .form_header .form_group .notas {
+  gap: 0;
+}
+.livro_container--Comentarios .form_postagem .form_header .form_group .notas label {
+  margin-right: 1rem;
+}
+.livro_container--Comentarios .form_postagem .form_group {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+.livro_container--Comentarios .form_postagem #conteudo {
+  flex-grow: 1;
+  border: none;
+  padding: 1rem;
+  background-color: none;
+  border-radius: 0.5rem;
+  color: var(--cor-0);
+  outline: none;
+  resize: none;
+}
+.livro_container--Comentarios .form_postagem #conteudo::-moz-placeholder {
+  color: var(--cor-5);
+}
+.livro_container--Comentarios .form_postagem #conteudo::placeholder {
+  color: var(--cor-5);
+}
+.livro_container--Comentarios .form_postagem input {
+  height: 30px;
+  border: none;
+  padding: 1rem;
+  background-color: none;
+  border-radius: 0.5rem;
+  color: var(--cor-0);
+  outline: none;
+}
+.livro_container--Comentarios .form_postagem input::-moz-placeholder {
+  color: var(--cor-5);
+}
+.livro_container--Comentarios .form_postagem input::placeholder {
+  color: var(--cor-5);
+}
+.livro_container--Comentarios .form_postagem input[type=radio] {
+  accent-color: var(--cor-6); /* azul, pode ser qualquer cor */
+}
+.livro_container--Comentarios .form_postagem button {
+  flex-grow: 1;
+  outline: none;
+  background-color: var(--cor-4);
+  color: var(--cor-9);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-size: 0.75rem;
+  transition: background-color 0.2s ease-in;
+}
+.livro_container--Comentarios .form_postagem button:hover {
+  background-color: var(--cor-0);
+}
+.livro_container--Comentarios .lista-comentarios {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  flex-grow: 1;
+  gap: 1rem;
+}
+.livro_container--Comentarios .lista-comentarios .comentario {
+  position: relative;
+  width: 100%;
+  text-align: left;
+  background: var(--cor-4);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+.livro_container--Comentarios .lista-comentarios .comentario .form_excluir {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+.livro_container--Comentarios .lista-comentarios .comentario .form_excluir button {
+  flex-grow: 1;
+  outline: none;
+  background-color: var(--cor-4);
+  color: var(--cor-9);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-size: 0.75rem;
+  transition: background-color 0.2s ease-in;
+}
+.livro_container--Comentarios .lista-comentarios .comentario .form_excluir button:hover {
+  background-color: var(--cor-0);
+}
+.livro_container--Comentarios .lista-comentarios .comentario .usuario {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+.livro_container--Comentarios .lista-comentarios .comentario .titulo {
+  font-size: 1.1rem;
+}
+.livro_container--Comentarios .lista-comentarios .comentario .postagem {
+  text-align: justify;
+}
+
+.livros_container {
+  width: 1400px;
+  height: 100%;
+  background: linear-gradient(var(--cor-4), var(--cor-3));
+  margin: 4rem auto;
+  border-radius: 1rem;
+  border: 10px solid #fff;
+  padding: 1rem 3rem;
+}
+.livros_container .form_pesquisa {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  gap: 2rem;
+  padding: 1rem;
+  border-radius: 0.8rem;
+  background-color: var(--cor-9);
+}
+.livros_container .form_pesquisa .input_titulo, .livros_container .form_pesquisa .input_categoria {
+  flex-grow: 2;
+}
+.livros_container .form_pesquisa .input_pesquisar {
+  flex-grow: 1;
+}
+.livros_container .form_pesquisa input {
+  border: none;
+  padding: 1rem;
+  background-color: none;
+  border-radius: 0.5rem;
+  color: var(--cor-0);
+  outline: none;
+}
+.livros_container .form_pesquisa input::-moz-placeholder {
+  color: var(--cor-5);
+}
+.livros_container .form_pesquisa input::placeholder {
+  color: var(--cor-5);
+}
+.livros_container .form_pesquisa select {
+  background-color: none;
+  color: var(--cor-5);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  outline: none;
+  border: none;
+}
+.livros_container .form_pesquisa select::-moz-placeholder {
+  color: var(--cor-5);
+}
+.livros_container .form_pesquisa select::placeholder {
+  color: var(--cor-5);
+}
+.livros_container .form_pesquisa button {
+  flex-grow: 1;
+  outline: none;
+  background-color: var(--cor-4);
+  color: var(--cor-9);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-size: 0.75rem;
+  transition: background-color 0.2s ease-in;
+}
+.livros_container .form_pesquisa button:hover {
+  background-color: var(--cor-0);
+}
+.livros_container--card {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  gap: 2rem;
+  padding: 1rem;
+}
+.livros_container--card .card_livro {
+  width: 350px;
+  background-color: #fff;
+  border-radius: 0.3rem;
+  padding: 1rem;
+}
+.livros_container--card .card_livro a {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  background-color: #fff;
+  transition: box-shadow 0.3s ease-out;
+}
+.livros_container--card .card_livro a img {
+  margin-bottom: 1rem;
+}
+.livros_container--card .card_livro a h2 {
+  font-size: 1.2rem;
+  margin: 0.5rem;
+}
+.livros_container--card .card_livro a p {
+  display: flex;
+  align-items: center;
+}
+.livros_container--card .card_livro a:hover {
+  box-shadow: 7px 7px 20px var(--cor-2);
+}
+
+.form_pesquisa {
+  margin-bottom: 3rem;
+}
 
 :root {
   --cor-1: #E2E6E9;
@@ -324,8 +536,14 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  min-height: 100vh;
+  background: linear-gradient(var(--cor-1), var(--cor-2)) !important;
+}
+
 body {
-  background: linear-gradient(var(--cor-1), var(--cor-2));
+  background: none;
   font-family: var(--font-2);
   color: var(--cor-0);
 }
@@ -345,4 +563,30 @@ li {
 img {
   display: block;
   max-width: 100%;
+}
+
+.header_container {
+  width: 100%;
+  height: 80px;
+  padding: 1rem;
+  margin-bottom: 5rem;
+}
+.header_container .display_container--header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header_container .display_container--header nav ul {
+  display: flex;
+}
+.header_container .display_container--header nav.nav_menu ul {
+  gap: 2.5rem;
+}
+.header_container .display_container--header nav.nav_user ul {
+  gap: 1rem;
+}
+.header_container .display_container--header .logo {
+  font-family: var(--font-1);
+  font-size: 2.6rem;
+  color: var(--cor-8);
 }

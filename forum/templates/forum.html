@@ -15,8 +15,8 @@
 
         <nav class="nav_menu">
           <ul>
-            <li>LIVROS</li>
-            <li>POPULAR</li>
+            <li><a href="{{ url_for('listar_livros') }}">LIVROS</a></li>
+            <li><a href="#POPULAR">POPULAR</a></li>
           </ul>
         </nav>
 
@@ -48,12 +48,12 @@
     </main>
   </section>
 
-  <section class="forum_container--content">
+  <section class="forum_container--content" id="POPULAR">
     {% if livros %}
       {% for livro, media in livros %}
         <div class="livros_populares" id="livro" data-id="{{ livro.id }}">
-          <h4>Título: {{ livro.titulo }}</h4>
-          <h6>Autor: {{ livro.autor }}</h6>
+          <h4>{{ livro.titulo }}</h4>
+          <h6>{{ livro.autor }}</h6>
           {% if livro.imagem_base64 %}
             <img src="data:image/png;base64,{{ livro.imagem_base64 }}" alt="Capa do livro" width="300px" />
           {% else %}

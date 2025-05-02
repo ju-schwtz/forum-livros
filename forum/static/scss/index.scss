@@ -29,9 +29,14 @@
   // outline: 1px solid red;
 }
 
-body {
-  background: linear-gradient(var(--cor-1), var(--cor-2));
+html {
+  scroll-behavior: smooth;
+  min-height: 100vh;
+  background: linear-gradient(var(--cor-1), var(--cor-2)) !important;
+}
 
+body {
+  background: none;
   font-family: var(--font-2);
   color: var(--cor-0);
 }
@@ -52,4 +57,37 @@ li {
 img {
   display: block;
   max-width: 100%;
+}
+
+.header_container {
+  width: 100%;
+  height: 80px;
+  padding: 1rem;
+  margin-bottom: 5rem;
+
+  .display_container--header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    nav {
+
+      ul {
+        display: flex;
+      }
+
+      &.nav_menu ul {
+        gap: 2.5rem;
+      }
+
+      &.nav_user ul {
+        gap: 1rem;
+      }
+    }
+
+    .logo {
+      font-family: var(--font-1);
+      font-size: 2.6rem;
+      color: var(--cor-8);
+    }
+  }
 }

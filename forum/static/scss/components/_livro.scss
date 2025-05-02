@@ -11,10 +11,13 @@
 .livro_container--header {
   width: 100%;
   display: flex;
+  flex-flow: row-reverse nowrap;
   gap: 1rem;
   margin-bottom: 4rem;
 
   figure {
+    border-radius: .5rem;
+
     img {
       border-radius: .5rem;
     }
@@ -48,5 +51,148 @@
 
   h2 {
     margin-bottom: 3rem;
+  }
+
+  .form_postagem {
+    margin-bottom: 3rem;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: .8rem;
+    background-color: var(--cor-9);
+
+    .form_header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      .form_group {
+        width: 50%;
+
+        #titulo {
+          flex-grow: 1;
+        }
+
+        .notas {
+          gap: 0;
+
+          label {
+            margin-right: 1rem;
+          }
+        }
+      }
+    }
+
+    .form_group {
+      display: flex;
+      gap: .75rem;
+      align-items: center;
+    }
+
+    #conteudo {
+      flex-grow: 1;
+      border: none;
+      padding: 1rem;
+      background-color: none;
+      border-radius: .5rem;
+      color: var(--cor-0);
+      outline: none;
+      resize: none;
+
+      &::placeholder {
+        color: var(--cor-5);
+      }
+    }
+
+    input {
+      height: 30px;
+      border: none;
+      padding: 1rem;
+      background-color: none;
+      border-radius: .5rem;
+      color: var(--cor-0);
+      outline: none;
+
+      &::placeholder {
+        color: var(--cor-5);
+      }
+
+      &[type="radio"] {
+        accent-color: var(--cor-6); /* azul, pode ser qualquer cor */
+      }
+    }
+
+    button {
+      flex-grow: 1;
+      outline: none;
+      background-color: var(--cor-4);
+      color: var(--cor-9);
+      border: none;
+      border-radius: .5rem;
+      padding: .5rem;
+      cursor: pointer;
+      font-size: .75rem;
+      transition: background-color .2s ease-in;
+      
+      &:hover {
+        background-color: var(--cor-0);
+      }
+    }
+  }
+
+  .lista-comentarios {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    flex-grow: 1;
+    gap: 1rem;
+
+    .comentario {
+      position: relative;
+      width: 100%;
+      text-align: left;
+      background: var(--cor-4);
+      border-radius: .5rem;
+      padding: .5rem;
+
+      .form_excluir {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+
+        button {
+          flex-grow: 1;
+          outline: none;
+          background-color: var(--cor-4);
+          color: var(--cor-9);
+          border: none;
+          border-radius: .5rem;
+          padding: .5rem;
+          cursor: pointer;
+          font-size: .75rem;
+          transition: background-color .2s ease-in;
+          
+          &:hover {
+            background-color: var(--cor-0);
+          }
+        }
+      }
+
+      .usuario {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        margin-bottom: .75rem;
+      }
+
+      .titulo {
+        font-size: 1.1rem;
+      }
+
+      .postagem {
+        text-align: justify;
+      }
+    }
   }
 }
