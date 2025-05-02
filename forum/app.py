@@ -242,7 +242,7 @@ def listar_livros():
     livros = query.group_by(Livro.id).all()
     categorias = CategoriaLivro.query.all()
 
-    return render_template('livros.html', livros=livros, categorias=categorias)
+    return render_template('livros.html', livros=livros, categorias=categorias, usuario=usuario)
 
 # ----- Inicialização -----
 if __name__ == '__main__':
